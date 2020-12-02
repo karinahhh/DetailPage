@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DetailPage.MainPage">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" >
+            <ContentPage.Content>
+                <StackLayout Margin="10" Orientation="Vertical">
+                    <Image x:Name="profImg"/>
+                    <ListView x:Name="abtList" ItemSelected="abtList_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ImageCell Text="{Binding Text}" Detail="{Binding Detail}"
+                                           ImageSource="{Binding ImagePath}">
+                                </ImageCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+
+</MasterDetailPage>
